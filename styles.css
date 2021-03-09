@@ -2,6 +2,8 @@ body {
     background-color: #f9fafc;
 
     font-family: 'Open Sans', sans-serif /*"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif*/;
+/*     sans-serif is a property for the Open Sans font. Sans serif means that the text will not have any free edges hanging off, compare this with how
+    Times-New Roman looks where it has little edges coming off each end of the line. You can see this by googling serif vs sans-serif fonts */
         font-weight: normal;
         font-style: normal;
         line-height: 1;
