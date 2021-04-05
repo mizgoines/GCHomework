@@ -77,16 +77,19 @@ console.log(submissions)
 
 // FIND LOWEST SCORE
 function findLowestScore(array) {
-  let lowestNumber = 999; 
+  let lowestNumber = array[0]; //best to start with a real value from the array and the first value is the best 
 
   array.forEach(object => {
-    if(object.score < lowestNumber) {
-      lowestNumber = object.score
+    if(object.score < lowestNumber.score) {
+      lowestNumber = object
     }
   })
 
-  console.log(lowestNumber)
+  return lowestNumber
 }
+//instructions ask for the whole object to be returned, not just the score
+//also, theres a BIG difference in having your function use a console.log() vs a return statement 
+//and on the test it will be considered wrong if its one and not the other. 
 findLowestScore(submissions)
 
 
@@ -99,7 +102,7 @@ findLowestScore(submissions)
     }
 
     let average = total / array.length
-    console.log(average)
+    return average
   }
 
 findAverageScore(submissions)
@@ -119,6 +122,7 @@ function deleteSubmissionByName (array, name) {
 
   
   function findPerson(person) {
+    
       return(person.name === name)
     // array.forEach(object => {
     //   if( object.name === name) {
@@ -163,10 +167,10 @@ function deleteSubmissionByName (array, name) {
   
    
     function filterPassing (array) {
-        function isStudentPassing(student) {
-            return student.passed 
-        }
-        let result = array.filter(isStudentPassing);
+//         function isStudentPassing(student) {
+//             return student.passed 
+//         } //having two return statements wont work here because it exits the funcntion before the second part can run 
+        let result = array.filter(student => student.passed);
         return result
     }
 
@@ -175,10 +179,10 @@ function deleteSubmissionByName (array, name) {
 
   // function filter90AndAbove(array)
   function filter90AndAbove(array) {
-    function studentExcels(student) {
-        return student.passed 
-    }
-    let result = array.filter(studentExcels);
+//     function studentExcels(student) {
+//         return student.passed 
+//     }
+    let result = array.filter(student => student.score >= 90);
     return result
 }
 
